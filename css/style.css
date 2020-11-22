@@ -48,3 +48,7 @@ body {
 .visible{
     visibility: visible;
 }
+.data{
+    text-align: center;
+    font-size: 15pt;
+}
