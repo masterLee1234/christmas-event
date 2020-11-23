@@ -81,7 +81,7 @@ let isdel = true;
 card.addEventListener('click', function () {
     if(isdel){
         var item = randList[Math.floor(Math.random() * randList.length)];
-        document.querySelector('.card__face--back').innerHTML = '<div class="text">학번: '+data.member[item].student_number + '<br/>이름: '+data.member[item].name+"</div>";
+        document.querySelector('.card__face--back').innerHTML = `<div class="text">학번: `+data.member[item].student_number + '<br/>이름: '+data.member[item].name+"</div>";
         randList = arrayRemove(randList, item)
     }
     isdel = !isdel
