@@ -42,14 +42,18 @@ function clickSettingsBtn(){
     element2.classList.toggle("invisible");
 }
 function minus(i){
-    if(data.member[i].number>1)
+    if(data.member[i].number>1){
         data.member[i].number -= 1;
+        randList = arrayRemove(randList, i)
         show()
+    }
 }
 function plus(i){
-    if(data.member[i].number<3)
+    if(data.member[i].number<3){
         data.member[i].number += 1;
+        randList.push(i)
         show()
+    }
 }
 function arrayRemove(arr, value) { 
     let iszero = true;
@@ -77,7 +81,7 @@ let isdel = true;
 card.addEventListener('click', function () {
     if(isdel){
         var item = randList[Math.floor(Math.random() * randList.length)];
-        document.querySelector('.card__face--back').innerHTML = `학번: `+data.member[item].student_number + ' 이름: '+data.member[item].name;
+        document.querySelector('.card__face--back').innerHTML = `<div class="text">학번: `+data.member[item].student_number + '<br/>이름: '+data.member[item].name+"</div>";
         randList = arrayRemove(randList, item)
     }
     isdel = !isdel

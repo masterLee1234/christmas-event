@@ -118,8 +118,14 @@ body {
 }
 .card__face--back {
     background-color: gray;
+    text-align: center;
     transform: rotateY(180deg);
 }
 .invisible{
     visibility: hidden;
+}
+.text{
+    font-size: 30pt;
+    color: white;
+    padding: 250px 0 100px;
 }
