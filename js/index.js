@@ -15,7 +15,7 @@ let data = {
         {"name":"이연진", "student_number":"10213", "number":3},
         {"name":"정민주", "student_number":"10214", "number":3},
         {"name":"조은서", "student_number":"10215", "number":3},
-        {"name":"지윤정", "student_number":"10216", "number":3},
+        {"name":"지윤정", "student_number":"10216", "number":6},
         {"name":"김유석", "student_number":"10217", "number":3},
         {"name":"김재원", "student_number":"10218", "number":3},
         {"name":"김지후", "student_number":"10219", "number":3},
@@ -29,10 +29,10 @@ let data = {
         {"name":"이강현", "student_number":"10227", "number":3},
         {"name":"이주혁", "student_number":"10228", "number":3},
         {"name":"이진원", "student_number":"10229", "number":3},
-        {"name":"이형진", "student_number":"10230", "number":3},
+        {"name":"이형진", "student_number":"10230", "number":6},
         {"name":"장윤성", "student_number":"10231", "number":3},
         {"name":"조민구", "student_number":"10232", "number":3},
-        {"name":"최준혁", "student_number":"10233", "number":3}
+        {"name":"최준혁", "student_number":"10233", "number":6}
     ]
 }
 function clickSettingsBtn(){
@@ -49,15 +49,14 @@ function minus(i){
     }
 }
 function plus(i){
-    if(data.member[i].number<3){
-        data.member[i].number += 1;
-        randList.push(i)
-        show()
-    }
+    data.member[i].number += 1;
+    randList.push(i)
+    show()
 }
 function arrayRemove(arr, value) { 
     let iszero = true;
     let result = []
+    data.member[value].number -= 1;
     for(i = 0; i<arr.length; i++){
         if(arr[i] == value && iszero){
             iszero = !iszero
@@ -86,4 +85,5 @@ card.addEventListener('click', function () {
     }
     isdel = !isdel
     card.classList.toggle('is-flipped')
+    show()
 })
